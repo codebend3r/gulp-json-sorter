@@ -1,4 +1,14 @@
-# gulp-json-sorter
-gulp-json-sorter
+Sorts JSON files alphabetically
 
-Sorts alphabetically any given json files through Gulp streams 
+    var jsonSorter = require('ute-gulp-json-sorter');
+    
+    /**
+     * sorts json alphabetically
+     */
+    gulp.task('sort', function () {
+    
+      return gulp.src(['ute-tags.json'])
+        .pipe(jsonSorter())
+        .pipe(gulp.dest('/output'))
+    
+    });

@@ -1,5 +1,5 @@
 /**
- * Updated by crivas on 04/17/2015.
+ * Updated by crivas on 08/11/2015
  */
 
 'use strict';
@@ -51,7 +51,7 @@ module.exports = function () {
   };
 
   /**
-   *
+   * 
    * @param file
    * @param enc
    * @param callback

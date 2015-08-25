@@ -1,9 +1,9 @@
 Gulp JSON Sorter
 ====================
 
-sorts JSON files alphabetically and optionally renames underscores to be hyphens.
+# Sorts JSON files alphabetically and optionally renames underscores to be hyphens.
 
-1. Basic Example
+Basic Example
 
     var jsonSorter = require('gulp-json-sorter');
 
@@ -15,7 +15,9 @@ sorts JSON files alphabetically and optionally renames underscores to be hyphens
 
     });
 
-2. With Rename Enabled
+With Rename Enabled
+
+    var jsonSorter = require('gulp-json-sorter');
 
     gulp.task('sort', function () {
 

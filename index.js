@@ -9,7 +9,7 @@ var fs = require('fs'),
   gutil = require('gulp-util'),
   _ = require('underscore-node');
 
-module.exports = function () {
+module.exports = function (options) {
 
   /**
    * sorts json alphabetically and returns the modified object
@@ -23,10 +23,12 @@ module.exports = function () {
       cleanedObject = {},
       keys;
 
-    //_.each(parsedObject, function (prop, key) {
-    //  var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
-    //  cleanedObject[cleanKey] = prop;
-    //});
+      if (options.rename) {
+        _.each(parsedObject, function (prop, key) {
+          var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
+          cleanedObject[cleanKey] = prop;
+        });
+      }
 
     keys = _.sortBy(_.keys(parsedObject), function (key) {
       return key.toLowerCase();
@@ -46,12 +48,12 @@ module.exports = function () {
 
     });
 
-    return sortedObj;
+    return JSON.stringify(sortedObj);
 
   };
 
   /**
-   * 
+   *
    * @param file
    * @param enc
    * @param callback
@@ -70,9 +72,9 @@ module.exports = function () {
     } else {
 
       var ctx = file.contents.toString('utf8');
-      var jsonData = sortObject(ctx, file);
+      var jsonData = sortObject(ctx);
 
-      file.contents = new Buffer(JSON.stringify(jsonData));
+      file.contents = new Buffer(jsonData);
       callback(null, file);
 
     }

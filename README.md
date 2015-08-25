@@ -1,7 +1,7 @@
 Gulp JSON Sorter
 ====================
 
-# Sorts JSON files alphabetically and optionally renames underscores to be hyphens.
+> Sorts JSON files alphabetically and optionally renames underscores to be hyphens.
 
 Basic Example
 

@@ -23,12 +23,12 @@ module.exports = function (options) {
       cleanedObject = {},
       keys;
 
-      if (options.rename) {
-        _.each(parsedObject, function (prop, key) {
-          var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
-          cleanedObject[cleanKey] = prop;
-        });
-      }
+    if (options.rename) {
+      _.each(parsedObject, function (prop, key) {
+        var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
+        cleanedObject[cleanKey] = prop;
+      });
+    }
 
     keys = _.sortBy(_.keys(parsedObject), function (key) {
       return key.toLowerCase();

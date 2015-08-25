@@ -1,3 +1,6 @@
+Gulp JSON Sorter
+====================
+
 sorts JSON files alphabetically and optionally renames underscores to be hyphens.
 
 1. Basic Example

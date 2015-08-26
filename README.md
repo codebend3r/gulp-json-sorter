@@ -1,6 +1,5 @@
 Gulp JSON Sorter
 ====================
-
 ![gulp-json-sorter build status](https://travis-ci.org/crivas/gulp-json-sorter.svg?branch=master)
 
 > Sorts JSON files alphabetically and optionally renames underscores to be hyphens.

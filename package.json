@@ -1,7 +1,7 @@
 {
   "name": "gulp-json-sorter",
-  "version": "0.0.4",
-  "repository": "http://totes-gitlab01.rogers.com/ute/ute-ui",
+  "version": "0.0.5",
+  "repository": "https://github.com/crivas/gulp-json-sorter",
   "description": "sorts JSON files alphabetically and optionally renames underscores to be hyphens",
   "main": "index.js",
   "author": "Chester Rivas",
@@ -10,5 +10,9 @@
     "through2": "^0.6.3",
     "gulp-util": "^3.0.6",
     "underscore-node": "^0.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.2.5"
   }
 }

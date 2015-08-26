@@ -10,7 +10,7 @@ var jsonSorter = require('gulp-json-sorter');
 
 gulp.task('sort', function () {
 
-  return gulp.src(['file1.json', 'file2.json''])
+  return gulp.src(['file1.json', 'file2.json'])
     .pipe(jsonSorter())
     .pipe(gulp.dest('/output'))
 
@@ -23,7 +23,7 @@ var jsonSorter = require('gulp-json-sorter');
 
 gulp.task('sort', function () {
 
-  return gulp.src(['file1.json', 'file2.json''])
+  return gulp.src(['file1.json', 'file2.json'])
     .pipe(jsonSorter({
         rename: true
       }))

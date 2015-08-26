@@ -1,8 +1,8 @@
 {
   "name": "gulp-json-sorter",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "repository": "https://github.com/crivas/gulp-json-sorter",
-  "description": "sorts JSON files alphabetically and optionally renames underscores to be hyphens",
+  "description": "Sorts JSON files alphabetically and optionally renames underscores to be hyphens",
   "main": "index.js",
   "author": "Chester Rivas",
   "license": "MIT",

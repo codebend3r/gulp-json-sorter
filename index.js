@@ -23,7 +23,7 @@ module.exports = function (options) {
       cleanedObject = {},
       keys;
 
-    if (options.rename) {
+    if (!_.isUndefined(options) && !_.isUndefined(options.rename)) {
       _.each(parsedObject, function (prop, key) {
         var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
         cleanedObject[cleanKey] = prop;

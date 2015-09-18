@@ -1,5 +1,7 @@
 /**
- * Updated by crivas on 08/26/2015
+ * Updated by crivas on 09/18/2015
+ * Email: chester.rivas@gmail.com
+ * Plugin Name: gulp-json-sorter
  */
 
 'use strict';
@@ -7,53 +9,13 @@
 var fs = require('fs'),
   through = require('through2'),
   gutil = require('gulp-util'),
+  sortObject = require('./lib/sortObject'),
   _ = require('underscore-node');
 
 module.exports = function (options) {
 
   /**
-   * sorts json alphabetically and returns the modified object
-   * @param object
-   * @returns {object}
-   */
-  var sortObject = function (object) {
-
-    var sortedObj = {},
-      parsedObject = JSON.parse(object),
-      cleanedObject = {},
-      keys;
-
-    if (!_.isUndefined(options) && !_.isUndefined(options.rename)) {
-      _.each(parsedObject, function (prop, key) {
-        var cleanKey = key.replace(/^_/, '').replace(/_/g, '-');
-        cleanedObject[cleanKey] = prop;
-      });
-    }
-
-    keys = _.sortBy(_.keys(parsedObject), function (key) {
-      return key.toLowerCase();
-    });
-
-    _.each(keys, function (key) {
-
-      if (sortedObj[key]) {
-        console.log('key', key, 'already exists and will be overwritten');
-      }
-
-      if (typeof parsedObject[key] === 'object') {
-        sortedObj[key] = sortObject(JSON.stringify(parsedObject[key]));
-      } else {
-        sortedObj[key] = parsedObject[key];
-      }
-
-    });
-
-    return JSON.stringify(sortedObj);
-
-  };
-
-  /**
-   *
+   * on every file
    * @param file
    * @param enc
    * @param callback
@@ -72,7 +34,7 @@ module.exports = function (options) {
     } else {
 
       var ctx = file.contents.toString('utf8');
-      var jsonData = sortObject(ctx);
+      var jsonData = sortObject(ctx, options);
 
       file.contents = new Buffer(jsonData);
       callback(null, file);

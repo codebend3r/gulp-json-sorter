@@ -35,11 +35,43 @@ describe('json sorter', function () {
 
       var changedFile = file.contents.toString('utf8');
 
-      var jsonFile = JSON.stringify(changedFile);
-      var jsonParsed = JSON.parse(jsonFile);
+      assert.equal(changedFile.indexOf('_Prerit'), 2, '');
+      assert.equal(changedFile.indexOf('Andrew A'), 17, '');
+      assert.equal(changedFile.indexOf('Andrew M'), 49, '');
+      assert.equal(changedFile.indexOf('Chester'), 65, '');
+      assert.equal(changedFile.indexOf('Mario'), 95, '');
+      assert.equal(changedFile.indexOf('Matt'), 79, '');
+      assert.equal(changedFile.indexOf('Sacha'), 112, '');
+      assert.equal(changedFile.indexOf('Ed'), 130, '');
+      assert.equal(changedFile.indexOf('Ron'), 140, '');
 
-      console.log('jsonFile', jsonFile);
-      console.log('jsonParsed', jsonParsed);
+      cb();
+
+    });
+
+    stream.write(getFile('./test/fixtures/file.json'));
+
+  });
+
+  it('should recursively sort the json file and rename properties', function (cb) {
+
+    var stream = jsonSorter({
+      rename: true
+    });
+
+    stream.on('data', function (file) {
+
+      var changedFile = file.contents.toString('utf8');
+
+      assert.equal(changedFile.indexOf('Andrew A'), 2, '');
+      assert.equal(changedFile.indexOf('Andrew M'), 34, '');
+      assert.equal(changedFile.indexOf('Chester'), 50, '');
+      assert.equal(changedFile.indexOf('Mario'), 63, '');
+      assert.equal(changedFile.indexOf('Matt'), 80, '');
+      assert.equal(changedFile.indexOf('Sacha'), 96, '');
+      assert.equal(changedFile.indexOf('Ed'), 114, '');
+      assert.equal(changedFile.indexOf('Prerit'), 124, '');
+      assert.equal(changedFile.indexOf('Ron'), 138, '');
 
       cb();
 

@@ -10,7 +10,7 @@ var should = require('chai').should(),
   fs = require('fs'),
   jsonSorter = require('../index');
 
-describe('version bumper', function () {
+describe('json sorter', function () {
 
   var getFile = function (filePath) {
     return new gutil.File({
@@ -48,26 +48,5 @@ describe('version bumper', function () {
     stream.write(getFile('./test/fixtures/file.json'));
 
   });
-
-  // it('should bump up version to 0.0.2 for a css file', function (cb) {
-  //
-  //   var stream = jsonSorter({
-  //     version: '0.0.2'
-  //   });
-  //
-  //   stream.on('data', function (file) {
-  //
-  //     var changedFile = file.contents.toString('utf8');
-  //
-  //     assert.notInclude(changedFile, '0.0.1', 'version has been changed to 0.0.2');
-  //     assert.include(changedFile, '0.0.2', 'version has been changed to 0.0.2');
-  //
-  //     cb();
-  //
-  //   });
-  //
-  //   stream.write(getFile('./test/fixtures/in/file.css'));
-  //
-  // });
 
 });

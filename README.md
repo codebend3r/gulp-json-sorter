@@ -4,6 +4,11 @@ Gulp JSON Sorter
 
 > Sorts JSON files alphabetically and optionally renames underscores to be hyphens.
 
+NPM Install
+```sh
+npm i gulp-json-sorter
+```
+
 Basic Example
 ```js
 var jsonSorter = require('gulp-json-sorter');

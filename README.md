@@ -30,9 +30,10 @@ gulp.task('sort', function () {
 
   return gulp.src(['file1.json', 'file2.json'])
     .pipe(jsonSorter({
-        rename: true
+        toCamelCase: true
       }))
     .pipe(gulp.dest('/output'))
 
 });
 ```
+**deprecated notice** `rename` option has been deprecated, use `toCamelCase` instead

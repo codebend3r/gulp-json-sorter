@@ -1,11 +1,14 @@
 {
   "name": "gulp-json-sorter",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "repository": "https://github.com/crivas/gulp-json-sorter",
   "description": "Sorts JSON files alphabetically and optionally renames underscores to be hyphens",
   "main": "index.js",
   "author": "Chester Rivas",
   "license": "MIT",
+  "engines": {
+    "node": ">=0.12.0"
+  },
   "dependencies": {
     "through2": "^0.6.3",
     "gulp-util": "^3.0.6",
@@ -14,5 +17,8 @@
   "devDependencies": {
     "chai": "^3.2.0",
     "mocha": "^2.2.5"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }
